@@ -12,7 +12,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+        <!--SIMBOLO DO MENU-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <title>Maré Alta Resort</title>
 </head>
 <body>
@@ -25,8 +26,8 @@
                 <span></span>
             </div>
             <ul id="menu-aberto">
-            <li><a href="" class="menu-letras">Hotel ▼</a></li>
-            <li><a href="" class="menu-letras">Estruturas  ▼</a></li>
+            <li><a href="" class="menu-letras">Hotel <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="" class="menu-letras">Estruturas  <i class="fa-solid fa-angle-down"></i></a></li>
             <li><a href="" class="menu-letras">Sobre</a></li>
             <li><a href=""><button class="menu-letras">Reservar</button></a></li>
               </ul>
@@ -37,9 +38,35 @@
     <img src="./images/header-foto.png" alt="Foto do hotel" class="img-header">
     <h1 id="texto-header">Maré Alta</h1>
     <h2 id="resort-header">R E S O R T</h2>
-    <a href=""><button id="botao-header">Reserve Agora |  </button></a>
-
+    <a href=""><button id="botao-header">Reserve Agora | ➔ </button></a>
 </div>
+    <!--ANIMAÇÃO -->
+    <section class="secao">
+        <div class="title-div">
+            <h1 class="title">Por que escolher a Maré Alta?</h1>
+            <h2 class="subtitle">Números que falam por si só</h2>
+        </div>
+    <div class="animacao">
+        <h1><span data-count="5">0</span>/5</h1>
+        <h2 class="2-animacao">Avaliação Média</h2>
+        <h3 class="h3-animacao">Dos nossos hóspedes</h3>
+    </div>
+    <div class="animacao">
+        <h1><span data-count="15.000">0</span>+</h1>
+        <h2 class="2-animacao">Clientes Felizes</h2>
+        <h3 class="h3-animacao">Desde de nosssa abertura</h3>
+    </div>
+    <div class="animacao">
+        <h1><span data-count="15">0</span>+</h1>
+        <h2 class="2-animacao">Anos de experiência</h2>
+        <h3 class="h3-animacao">Servindo com qualidade</h3>
+    </div>
+    <div class="animacao">
+        <h1><span data-count="25">0</span>+</h1>
+        <h2 class="2-animacao">Prêmios Internacionais</h2>
+        <h3 class="h3-animacao">Reconhecimento Mundial</h3>
+    </div>
+    </section>
 <script src="./scripts/homepage.js"></script>
 </body>
 </html>

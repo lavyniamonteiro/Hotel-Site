@@ -122,6 +122,7 @@ button.menu-letras:hover {
     left: 50%;
     z-index: 998;
     font-size: 2.5rem;
+    text-shadow: 0px 4px 16px rgb(0, 0, 0, 10);
 }
 #resort-header{
     font-family: "Montserrat";
@@ -133,6 +134,8 @@ button.menu-letras:hover {
     z-index: 998;
     font-weight: 440;
     font-size: 1rem;
+    text-shadow: 0px 4px 16px rgb(0, 0, 0, 10);
+
 
 }
 #botao-header{
@@ -148,4 +151,59 @@ button.menu-letras:hover {
     top: 690%;
     left: 50%;
     z-index: 998;
+}
+
+/* Novo layout para títulos e animações */
+.secao{
+        background: #E6F7FA;
+
+}
+.title-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0 1rem 0;
+}
+.title {
+    font-size: 1.4rem;
+    color: #104654;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-top: 19rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    z-index: 988;
+
+}
+.subtitle {
+    font-size: 0.9rem;
+    color: #333;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+}
+.animacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 350px;
+
+}
+.animacao h1 {
+    font-size: 2rem;
+    color: #104654;
+    margin-bottom: 0.2rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+.animacao h2, .animacao h3 {
+    font-size: 1rem;
+    color: #333;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 0.2rem;
+    text-align: center;
 }
