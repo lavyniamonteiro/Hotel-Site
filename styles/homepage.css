@@ -170,7 +170,7 @@ button.menu-letras:hover {
 }
 .title {
     font-size: 1.4rem;
-    color: #104654;
+    color: #008994;
     font-family: 'Montserrat', Arial, sans-serif;
     margin-top: 19rem;
     margin-bottom: 0.8rem;
@@ -180,7 +180,7 @@ button.menu-letras:hover {
 }
 .subtitle {
     font-size: 0.9rem;
-    color: #333;
+    color: #008994;
     font-family: 'Montserrat', Arial, sans-serif;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -200,13 +200,20 @@ button.menu-letras:hover {
 }
 .animacao h1 {
     font-size: 2rem;
-    color: #104654;
+    color: #008994;
     margin-bottom: 0.2rem;
     font-family: 'Montserrat', Arial, sans-serif;
 }
-.animacao h2, .animacao h3 {
+.animacao h2{
     font-size: 1rem;
-    color: #333;
+    color: #364153;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+.animacao h3{
+    font-size: 1rem;
+    color: #4A5565;
     font-family: 'Montserrat', Arial, sans-serif;
     margin-bottom: 0.2rem;
     text-align: center;
