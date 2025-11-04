@@ -160,7 +160,7 @@ button.menu-letras:hover {
 /* Novo layout para títulos e animações */
 .secao{
         background: #E6F7FA;
-
+        position: relative;
 }
 .title-div {
     display: flex;
@@ -182,7 +182,7 @@ button.menu-letras:hover {
     font-size: 0.9rem;
     color: #008994;
     font-family: 'Montserrat', Arial, sans-serif;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-align: center;
 
 }
@@ -217,4 +217,45 @@ button.menu-letras:hover {
     font-family: 'Montserrat', Arial, sans-serif;
     margin-bottom: 0.2rem;
     text-align: center;
+}
+
+.estrela{
+    margin-top: 0.4rem;
+   position: absolute;
+   transform: translate(-50%,-50%);
+    top: 42%;
+    left: 50%;
+   width: 10%;
+   z-index: 988;
+}
+.coracao{
+   position: absolute;
+   transform: translate(-50%,-50%);
+    top: 57%;
+    left: 50%;
+   width: 10%;
+   z-index: 988;
+}
+.medalha{
+    position: absolute;
+   transform: translate(-50%,-50%);
+    top: 72%;
+    left: 50%;
+   width: 10%;
+   z-index: 988;
+}
+.onda{
+     position: absolute;
+   transform: translate(-50%,-50%);
+    top: 87%;
+    left: 50%;
+   width: 10%;
+   z-index: 988;
+}
+.aposAnima h1{
+    font-size: 2rem;
+}
+.aposAnima h3{
+    font-size: 1rem;
+    
 }
