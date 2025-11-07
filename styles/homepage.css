@@ -196,6 +196,7 @@ button.menu-letras:hover {
     border-radius: 12px;
     width: 100%;
     max-width: 350px;
+    margin-left: 1rem;
 
 }
 .animacao h1 {
@@ -246,7 +247,7 @@ button.menu-letras:hover {
 }
 .onda{
      position: absolute;
-   transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%); 
     top: 87%;
     left: 50%;
    width: 10%;
