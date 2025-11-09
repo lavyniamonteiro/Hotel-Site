@@ -4,14 +4,6 @@ function toggleMenu(){
     menuLista.classList.toggle("menu-ativo");
 }
 hamburguer.addEventListener('click', toggleMenu);
-console.log("hey")
-
-var hamburguer = document.getElementById("hamburguer");
-var menuLista = document.getElementById("menu-aberto");
-function toggleMenu(){
-    menuLista.classList.toggle("menu-ativo");
-}
-hamburguer.addEventListener('click', toggleMenu);
 
 //ANIMAÇÃO DOS NUMEROS 
 const spans = document.querySelectorAll('.animacao span[data-count]'); //seleciona todos os spans dentro de .animacao com data-count
