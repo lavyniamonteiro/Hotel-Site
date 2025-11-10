@@ -19,42 +19,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" 
+rel="stylesheet">   
+    <!--FONTE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Londrina+Solid:wght@100;300;400;900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" 
 rel="stylesheet">
-    <!--SIMBOLO DO MENU-->
+    <!--BIBLIOTECA DE ICONES FONT AWESOME-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Maré Alta Resort</title>
 </head>
 
 <body>
-    <!--HEADER-->
+     <!-- MENU DE NAVEGAÇÃO (AGORA FORA DO HEADER) -->
+    <nav id="menu">
+        <div id="hamburguer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="menu-aberto">
+            <li><a href="" class="menu-letras">Hotel <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="" class="menu-letras">Estruturas <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="" class="menu-letras">Sobre</a></li>
+            <!-- Corrigi o <li> envolvendo o botão -->
+            <li><button class="menu-letras">Reservar</button></li> 
+        </ul>
+    </nav>
+
+    <!-- HEADER (AGORA SÓ COM A IMAGEM E TEXTOS) -->
     <header id="meu-header">
-        <nav id="menu">
-            <div id="hamburguer">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="menu-aberto">
-                <li><a href="" class="menu-letras">Hotel <i class="fa-solid fa-angle-down"></i></a></li>
-                <li><a href="" class="menu-letras">Estruturas <i class="fa-solid fa-angle-down"></i></a></li>
-                <li><a href="" class="menu-letras">Sobre</a></li>
-                <li><a href=""><button class="menu-letras">Reservar</button></a></li>
-            </ul>
-        </nav>
+        <div class="bg-header">
+            <img src="./images/DESKFOTO.png" alt="Foto do hotel" class="img-header">
+            <h1 id="texto-header">Maré Alta</h1>
+            <h2 id="resort-header">R E S O R T</h2>
+            <a href=""><button id="botao-header">Reserve Agora | ➔ </button></a>
+        </div>
     </header>
-    <!--FOTO DO HEADER -->
-    <div class="bg-header">
-        <img src="./images/header-foto.png" alt="Foto do hotel" class="img-header">
-        <h1 id="texto-header">Maré Alta</h1>
-        <h2 id="resort-header">R E S O R T</h2>
-        <a href=""><button id="botao-header">Reserve Agora | ➔ </button></a>
-    </div>
     <!--ANIMAÇÃO -->
     <section class="secao">
         <div class="title-div">
             <h1 class="title">Por que escolher a Maré Alta?</h1>
             <h2 class="subtitle">Números que falam por si só</h2>
         </div>
+    <div class="animacao-container">
         <div class="animacao">
             <img src="./images/estrela .png" alt="Estrela Azul" class="estrela">
             <h1><span data-count="4.9">0</span>/5</h1>
@@ -78,8 +86,28 @@ rel="stylesheet">
             <h1><span data-count="25">0</span>+</h1>
             <h2 class="animacao-2">Prêmios Internacionais</h2>
             <h3 class="h3-animacao">Reconhecimento Mundial</h3>
-        </div>
+    </div>
+    </div>
     </section>
+
+<!--  SEÇÃO DE RESERVA -->
+<section class="reserva-rapida">
+    <div class="reserva-container">
+        <button class="reserva-botao">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Calendário</span>
+        </button>
+        <button class="reserva-botao">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Hóspedes</span>
+        </button>
+        <button class="reserva-botao">
+            <i class="fa-solid fa-ticket"></i>
+            <span>Cupom</span>
+        </button>
+    </div>
+</section>
+
     <section class="aposAnima">
         <h1>Descubra o paraíso no Maré Alta Resort!</h1>
         <br>
@@ -110,6 +138,29 @@ rel="stylesheet">
         </section>
         <section class="acomodacoes">
             <h1>Nossas Acomodações</h1>
+            <img src="./images/card2.png" class="card2" >
+            <img src="./images/fotoreta.png" class="ft1">
+            <h2 class="roomName1">Quarto Comum</h2>
+            <h3 class="roomText1">Conforto e elegância para sua estadia</h3>
+            <h3 class="numero">A partir de R$ 450</h3>
+            <button class="buttonReservar">Reservar</button>
+
+            <img src="./images/card2.png" class="card2">
+            <img src="./images/fotoreta.png" class="ft2">
+            <h2 class="roomName2">Suíte Deluxe</h2>
+            <h3 class="roomText2">Luxo e privacidade com vista para o mar</h3>
+            <h3 class="numero2">A partir de R$ 750</h3>            <button class="buttonReservar">Reservar</button>
+            <button class="buttonReservar2">Reservar</button>
+
+            <img src="./images/card2.png" class="card2">
+            <img src="./images/fotoreta.png" class="ft3">
+            <h2 class="roomName3">Premium</h2>
+            <h3 class="roomText3">Experiência exclusiva com piscina própria</h3>
+            <h3 class="numero3">A partir de R$ 1500</h3>
+            <button class="buttonReservar3">Reservar</button>
+        </section>
+        <section class="loc">
+            <h1 class="locTitle">Nossa Localização</h1>
         </section>
     <script src="./scripts/homepage.js"></script>
 
