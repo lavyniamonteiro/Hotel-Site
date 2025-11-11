@@ -611,6 +611,27 @@ button.menu-letras:hover {
     z-index: 998;
 }
 
+.locTitle{
+    font-family: "Inter";
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+.loc{
+    position: relative;
+}
+.mapa{
+    margin-left: 12%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: block;
+    width: 50%;
+    height: auto;
+    margin-bottom: 1.8rem;
+   
+}
+
 @media (min-width: 768px) {
 /*HEADER*/
 .img-header{
@@ -838,7 +859,6 @@ button.menu-letras:hover {
     }
 
   
-
 }
 
 
