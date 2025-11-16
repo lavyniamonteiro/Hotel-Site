@@ -38,13 +38,13 @@
         <div class="toggle">
             <div class="toggle-left">
                 <h2>Olá, funcionário!</h2>
-                <p>Registre-se com seus dados pessoais</p>
+                <p>Registre-se com seus dados pessoais para poder ter acesso à página exclusiva para funcionários.</p>
                 <button class="btn ghost" id="btn-cadastrar">Cadastrar-se</button>
             </div>
 
             <div class="toggle-right">
                 <h2>Bem-vindo de volta!</h2>
-                <p>Entre na sua conta com seus dados</p>
+                <p>Entre na sua conta com seus dados pessoais</p>
                 <button class="btn ghost" id="btn-login">Entrar</button>
             </div>
         </div>
