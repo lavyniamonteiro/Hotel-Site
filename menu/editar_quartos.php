@@ -1,15 +1,27 @@
 <?php
 include('../conf/conexao.php');
+?>
 
+<form method="get">
+    <label>ID do quarto</label>
+    <input type="number" name="id" value="<?= isset($_GET['id']) ? $_GET['id'] : '' ?>">
+    <button type="submit">Pesquisar</button>
+</form>
+<br>
 
-if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    die("Erro: ID do quarto não fornecido ou inválido.");
+<?php
+if (!isset($_GET['id'])) {
+    exit();
 }
 
-$id = $_GET['id']; 
+if (!is_numeric($_GET['id'])) {
+    die("Erro: ID do quarto inválido.");
+}
+
+$id = $_GET['id'];
 
 $sql = "SELECT * FROM quartos WHERE id = $id";
-$result = $conexao->query($sql); 
+$result = $conexao->query($sql);
 
 if (!$result || $result->num_rows === 0) {
     die("Erro: Quarto não encontrado.");
@@ -25,14 +37,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $descricao = $_POST['descricao'];
 
     $update = "UPDATE quartos SET 
-               numero='$numero', tipo='$tipo', preco='$preco',
-               status='$status', descricao='$descricao'
+               numero='$numero', 
+               tipo='$tipo', 
+               preco='$preco',
+               status='$status', 
+               descricao='$descricao'
                WHERE id=$id";
 
     if ($conexao->query($update) === TRUE) {
-        echo " Quarto atualizado!";
-   
-        $quarto = $conexao->query($sql)->fetch_assoc();
+        echo "Quarto atualizado!";
+        
+        $quarto = $conexao->query("SELECT * FROM quartos WHERE id = $id")->fetch_assoc();
     } else {
         echo "Erro: " . $conexao->error;
     }
