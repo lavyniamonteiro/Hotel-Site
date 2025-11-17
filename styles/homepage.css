@@ -156,7 +156,7 @@ button.menu-letras {
     color: var(--main-color);
     border: none;
     font-family: "Inter";
-    font-weight: 200;
+    font-weight: 600;
     border-radius: 4px;
     padding: 0.8rem 1.5rem;
     margin-top: 1rem;
@@ -1530,6 +1530,12 @@ footer {
     }
     /*DROPDOWN*/
     #menu-aberto {
+        position: static;   /* Tira o fixed que vem do mobile */
+        transform: none;
+        height: auto;
+        width: auto;
+        padding: 0;
+        background: none;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -1538,50 +1544,48 @@ footer {
 
     #menu-aberto > li {
         display: inline-block;
+        position: relative; /* NECESSÁRIO para dropdown absoluto */
     }
 
-    /* Dropdown vira absoluto */
+    /* DROPDOWN ABSOLUTO */
     #menu-aberto li ul {
-        list-style: none;
-        font-family: "Inter";
+        display: block !important; 
         position: absolute;
         top: 100%;
         left: 0;
         background: #ffffff;
         min-width: 180px;
         padding: .5rem 0;
-        border-left: none;
         border-radius: 5px;
         border-top: 3px solid #125769;
         box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 
-        height: auto;       /* remove acordeão */
         opacity: 0;
         visibility: hidden;
         transform: translateY(10px);
-        transition: all 0.25s ease;
+        transition: all .25s ease;
     }
-    
-    .dropstyle{
-        color: black;
-        text-decoration: none;
-    }
-    .dropstyle:hover{
-        background-color: #033f47;
-    }
+
     #menu-aberto li ul li a {
         padding: .8rem 1rem;
-        width: 100%;
+        color: #000;
         display: block;
         white-space: nowrap;
     }
-
-    /* Hover mostra o dropdown */
-    #menu-aberto > li:hover > ul {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
+    .dropstyle{
+        font-family: "Inter";
     }
+    .dropstyle:hover {
+        background-color: #033f47;
+        color: white;
+    }
+
+    /* HOVER MOSTRA DROPDOWN */
+   #menu-aberto > li.menu-dropdown:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
 
     /* seta gira no hover */
     #menu-aberto > li:hover > a i {
