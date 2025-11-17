@@ -1,5 +1,5 @@
 :root {
-    --main-color: #125769Ef;
+    --main-color: #125769;
 }
 
 @font-face {
@@ -13,8 +13,35 @@
     box-sizing: border-box;}
 
 /* bloqueia o scroll horizontal */
-body {
-  overflow-x: hidden; }
+ html,body {
+  overflow-x: hidden;   
+    width: 100%;
+    min-width: 100%;
+    
+}
+
+/* Barra fixa no topo (começa escondida) */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    background: var(--main-color);
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    z-index: 999;
+
+    transform: translateY(-100%);     /* escondida */
+    transition: transform 0.3s ease;  /* animação suave */
+}
+
+/* Quando aparece */
+.top-bar.show {
+    transform: translateY(0);
+}
 
 #menu{
     position: fixed;
@@ -61,7 +88,7 @@ body {
     user-select: none;
     position: fixed;
     z-index: 1001;
-    top: 1rem;
+    top: 0.6rem;
     right: 1rem;
     background: none;
     border: none;
@@ -72,7 +99,7 @@ body {
     display: block;
     height: 3px;  
     margin-bottom: 6px;
-    background-color: rgb(64, 107, 183);
+    background-color: rgb(255, 255, 255);
     border-radius: 3px;
 }
 
@@ -290,6 +317,9 @@ button.menu-letras:hover {
     margin-top: 2.3rem;
     border-radius: 9px;
     margin-bottom: 3.4rem;
+}
+.slideFotos{
+    display: none;
 }
 .servicos{
     position: relative;
@@ -617,22 +647,218 @@ button.menu-letras:hover {
     font-size: 1.2rem;
     margin-bottom: 1.2rem;
 }
-.loc{
-    position: relative;
-}
+
 .mapa{
-    margin-left: 12%;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    display: block;
-    width: 50%;
-    height: auto;
-    margin-bottom: 1.8rem;
-   
+    /* Centraliza a imagem do mapa usando margin: auto */
+    display: block; 
+    width: 90%;
+    max-width: 50rem;
+    margin: 0 auto 1.8rem auto; /* Centraliza horizontalmente e adiciona margem inferior */
+    box-shadow: 2px 2px 11px var(--main-color);
+    border-radius: 8px; /* Adicionado para suavizar cantos */
+
+}
+.loc h3{
+    font-family: "Inter";
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    margin-left: 20px;
+    margin-right: 12px;
+    text-align: left;
+    margin-bottom: 0.9rem;
 }
 
-@media (min-width: 768px) {
+.endereco-container i{
+    color: var(--main-color);
+    margin-left: 1.39rem;
+    margin-top: 1.3rem;
+    width: 3rem;
+    height: auto;
+}
+.endereco-info, .endereco-info2{
+    position: relative;
+}
+.end{
+    font-family: "Inter";
+    font-size: 0.9rem;
+    margin-top: -1.1rem;
+    margin-left: 2.7rem;
+}
+.locDescricao{
+    font-family: "Inter";
+    font-size: 0.9rem;
+    font-weight: 300;
+    position: absolute;
+    top: 19%;
+    left: 6%;
+    margin-bottom: 2rem;
+    }
+    .locDes{
+    font-family: "Inter";
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    position: absolute;
+    left: 6%;
+    top: 25%;
+    }
+
+    #gradiente{
+    background-image: linear-gradient(8deg, #3FB7F2 0%, #38A2D6 50%, #16445A 100%);
+    padding: 4rem 0.7rem;
+    margin-top: 3rem;
+    }
+    
+    #gradiente h1{
+        font-size: 2rem;
+        color: #F3F3F3;
+        margin-top: -2.7rem;
+        align-items: center;
+        text-align: center;
+    }
+   
+    #gradiente h3{
+        color: white;
+        font-family: "Inter";
+        font-weight: 300;
+        align-items: center;
+        text-align: center;
+        margin-top: 0.9rem;
+        font-size: 0.9rem;
+        margin-left: 1.2rem;
+        margin-right: 1.2rem;
+    }
+    .botoes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .botaoReservar{
+        background: white;
+        color: var(--main-color);
+        border-radius: 4px;
+        padding: 0.5rem 1rem; 
+        font-size: 0.9rem;
+        transition: background-color 0.3s, color 0.3s;
+        border: none;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        width: 10rem;
+        height: 2rem;
+    }
+
+     .botaofale{
+        border: none;
+        background: white;
+        color: var(--main-color);
+        border-radius: 4px;
+        padding: 0.5rem 1rem; 
+        margin: 0;
+        width: 10rem;
+        height: 2rem;
+        font-size: 0.9rem;
+        transition: background-color 0.3s, color 0.3s;
+    }
+      .botaoReservar:hover, .botaofale:hover {
+        background-color: #033f47;
+        color: white;
+    }
+    footer{
+        background-color: #101820; 
+        color: #EAEAEA;
+        padding: 4rem 1.5rem;
+        font-family: 'Inter', sans-serif; 
+    }
+
+    .footer-container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 2.5rem; 
+    }
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    }
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #FFFFFF;
+    }
+
+.footer-des {
+    font-size: 0.9rem;
+    color: #A9B4C2; 
+    margin: 0;
+    font-weight: 300;
+    }
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+    color: #FFFFFF;
+    }
+
+.footer-links,
+.footer-contact,
+.footer-socials {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; 
+    }
+
+
+.footer-links a,
+.footer-contact a {
+    color: #A9B4C2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: color 0.2s ease;
+    }
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #FFFFFF; 
+    }   
+
+.footer-socials a {
+    color: #A9B4C2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; 
+    transition: color 0.2s ease;
+    }
+.footer-socials a:hover {
+    color: #FFFFFF;
+    }
+
+.footer-socials i {
+    font-size: 1.2rem; 
+    }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    color: #A9B4C2;
+}
+
+    @media (min-width: 768px) {
 /*HEADER*/
 .img-header{
     position: absolute;
@@ -644,7 +870,7 @@ button.menu-letras:hover {
     display: block;
     z-index: 1;
 }
-#texto-header{
+#texto-header{  
     font-family: "Dancing Script";
     color: rgb(255, 255, 255);
     position: absolute;
@@ -822,6 +1048,7 @@ button.menu-letras:hover {
     .reserva-rapida {
         display: block; 
         padding: 2rem 1rem;
+        margin-bottom: 2.5rem;
         }
     .reserva-container {
         display: flex;
@@ -858,7 +1085,409 @@ button.menu-letras:hover {
         font-size: 1.1rem;
     }
 
-  
+/*APOS ANIMACAO*/
+.aposAnima {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
 }
+
+.conteudo-texto {
+    flex: 1;
+    max-width: 550px;
+}
+
+.aposAnima h1 {
+    font-size: 2rem;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    color: var(--main-color);
+}
+
+.aposAnima h3 {
+    font-size: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.mais {
+    margin-left: 1px;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    width: auto;
+    height: auto;
+    white-space: nowrap;
+    
+}
+
+.img1 {
+    flex: 1;
+    max-width: 500px;
+    width: 100%;
+    margin: 0;
+    height: auto;
+    text-align: right;
+    align-items: right;
+    display: block;
+    border-radius: 12px;
+}
+/* SERVIÇOS*/
+
+.servicos {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+.servicos h1 {
+    font-family: 'Inter';
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    grid-column: 1 / -1;
+    color: var(--main-color);
+}
+
+/* Cada card ocupa uma célula do grid */
+.servicos .card:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.servicos .card:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.servicos .card:nth-of-type(3) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.servicos .card:nth-of-type(4) {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.card {
+    position: relative;
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    height: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.3);
+    border-radius: 23px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nadando{
+    position: absolute;
+    top: 21%;
+    left: 8%;
+}
+.prato{
+    position: absolute;
+    top: 54%;
+    left: 7%;
+}
+.spa{
+    position: absolute;
+    top: 21%;
+    left: 56%;
+}
+.acade{
+    position: absolute;
+    top: 56%;
+    left: 56%;
+}
+.nadandoT{
+    position: absolute;
+    top: 40%;
+    left: 11%;
+}
+.pratoT{
+    position: absolute;
+    top: 75%;
+    left: 10%;
+}
+.spaT{
+    position: absolute;
+    top: 40%;
+    left: 60%;
+}
+.acadeT{
+    position: absolute;
+    top: 76%;
+    left: 58%;
+}
+.textoN{
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    font-size: 1.1rem;
+}
+.textoP{
+    position: absolute;
+    top: 80%;
+    left: 24.8%;
+    font-size: 1.1rem;
+}
+.textoS{
+    position: absolute;
+    top: 45%;
+    left: 73.7%;
+    font-size: 1.1rem;
+}
+.textoA{
+    position: absolute;
+    top: 80%;
+    left: 74%;
+}
+/* ACOMODAÇÕES */
+.acomodacoes{
+    display: none;
+}
+    /*slide de fotos*/
+ .slideFotos {
+    display: block; /* Mostra no desktop */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    margin-top: -4rem;
+    margin-bottom: 2rem;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #2E7D9E;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.slides {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botões de navegação */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: var(--main-color);
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn-prev {
+    left: 20px;
+}
+
+.carousel-btn-next {
+    right: 20px;
+}
+
+/* Indicadores (bolinhas) */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 20;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.indicator.active {
+    background: white;
+    width: 30px;
+    border-radius: 6px;
+}
+/*mapa*/
+.loc {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.locTitle {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+}
+
+.loc h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    margin-bottom: 2rem;
+}
+
+.mapa {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    display: block;
+}
+
+.endereco-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.endereco-info,
+.endereco-info2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.endereco-container i {
+    color: var(--main-color);
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+
+.end {
+    font-family: "Inter";
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: var(--main-color);
+}
+
+.locDescricao,
+.locDes {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 300;
+    position: static;
+    margin: 0;
+}
+
+.endereco-praia {
+    display: block;
+}
+/* FOOTER */
+footer {
+    padding: 4rem 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* 4 colunas: primeira maior */
+    gap: 3rem;
+    align-items: start;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+.footer-des {
+    font-size: 1rem;
+    color: #A9B4C2;
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.footer-socials a:hover {
+    color: #FFFFFF;
+}
+
+.footer-socials i {
+    font-size: 1.3rem;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1; /* Ocupa todas as colunas */
+    
+}
+#gradiente{
+    padding: 4rem;
+    height: 60%;
+}
+
+}
+
+
 
 

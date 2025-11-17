@@ -33,6 +33,7 @@ rel="stylesheet">
 <body>
      <!-- MENU DE NAVEGAÇÃO (AGORA FORA DO HEADER) -->
     <nav id="menu">
+        <div class="top-bar"></div>
         <div id="hamburguer">
             <span></span>
             <span></span>
@@ -109,13 +110,16 @@ rel="stylesheet">
 </section>
 
     <section class="aposAnima">
+        <div class="conteudo-texto">
         <h1>Descubra o paraíso no Maré Alta Resort!</h1>
         <br>
         <h3>Entre o azul intenso do mar e o dourado das areias, o Maré Alta Resort é o destino perfeito para quem busca conforto, descanso e momentos inesquecíveis.
             <br>
             Desperte com o som das ondas, saboreie o melhor da gastronomia local e desfrute de uma estrutura completa à beira-mar.</h3>   
         <button class="mais">Saiba mais</button>
+        </div>
         <img src="./images/hotel1.png   " alt="imagem do hotel" class="img1">
+
     </section>
         <section class="servicos">
             <h1>Nossos Serviços Exclusivos</h1>
@@ -136,6 +140,29 @@ rel="stylesheet">
             <h2 class="acadeT">Academia</h2>
             <p class="textoA">Treine com equipamentos modernos e uma paisagem inspiradora.</p>
         </section>
+        <!--FOTOS DO HOTEL-->
+      <section class="slideFotos">
+    <div class="carousel-container">
+        <div class="slides">
+            <div class="slide"><img src="./images/slide 1.jpg" alt="Foto do hotel 1"></div>
+            <div class="slide"><img src="./images/slide 2.jpg" alt="Foto do hotel 2"></div>
+            <div class="slide"><img src="./images/slide3.jpg" alt="Foto do hotel 3"></div>
+            <div class="slide"><img src="./images/slide4.jpg" alt="Foto do hotel 4"></div>
+        </div>
+
+        <!-- Botões de navegação -->
+        <button class="carousel-btn carousel-btn-prev">‹</button>
+        <button class="carousel-btn carousel-btn-next">›</button>
+
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <button class="indicator active" data-slide="0"></button>
+            <button class="indicator" data-slide="1"></button>
+            <button class="indicator" data-slide="2"></button>
+            <button class="indicator" data-slide="3"></button>
+        </div>
+    </div>
+</section>
         <section class="acomodacoes">
             <h1>Nossas Acomodações</h1>
             <img src="./images/card2.png" class="card2" >
@@ -159,13 +186,88 @@ rel="stylesheet">
             <h3 class="numero3">A partir de R$ 1500</h3>
             <button class="buttonReservar3">Reservar</button>
         </section>
-        <section class="loc">
+        
+    <section class="loc">
             <h1 class="locTitle">Nossa Localização</h1>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1395.7693396984348!2d-34.82391121170339!3d-7.116339039386811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7acdd266e2de7e5%3A0xa4aca3c00d422308!2sLaguna%20Praia%20Hotel!5e0!3m2!1spt-BR!2sbr!4v1762898421330!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapa"></iframe>
             <h3>Situado em uma das praias mais exclusivas do Brasil, o Maré Alta Hotel oferece acesso direto à areia branca e águas cristalinas.</h3>
+            <div class="endereco-container">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="endereco-info">
+                    <h1 class="end">Endereço</h1>
+                    <h3 class="locDescricao">Praia de Maré Alta, Brasil</h3> 
+                </div>
+                <br>
+                <div class="endereco-praia">
+                    <i class="fa-solid fa-water"></i>
+                </div>
+                 <div class="endereco-info2">
+                    <h1 class="end">Acesso à Praia</h1>
+                    <h3 class="locDes">Acesso direto e privativo</h3> 
+                </div>
+            </div>
         </section>
-    <script src="./scripts/homepage.js"></script>
+        <section id="gradiente">
+            <h1>Pronto para sua Experiência Inesquecível?</h1>
+            <h3>Entre em contato conosco hoje e reserve sua estadia no Maré Alta Hotel</h3>
+            <div class="botoes">
+            <button class="botaoReservar">Reservar</button>
+            <button class="botaofale">Fale Conosco</button>
+        </div>
+        </section>
 
+       <footer>
+    <div class="footer-container">
+        <!-- Coluna 1 -->
+        <div class="footer-col">
+            <h3 class="footer-title-main">Maré Alta Resort</h3>
+            <p class="footer-des">Seu refúgio de luxo à beira-mar</p>
+        </div>
+
+        <!-- Coluna 2: Navegação -->
+        <div class="footer-col">
+            <h4 class="footer-title">Navegação</h4>
+            <ul class="footer-links">
+                <li><a href="#quartos">Quartos</a></li>
+                <li><a href="#quartos">Serviços</a></li>
+                <li><a href="#quartos">Pré-Check In</a></li>
+                <li><a href="#servicos">Sobre</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 3: Contato -->
+        <div class="footer-col">
+            <h4 class="footer-title">Contato</h4>
+            <ul class="footer-contact">
+                <li><a href="tel:+558333333333">+55 (83 ) 3333-3333</a></li>
+                <li><a href="mailto:infomarealta@gmail.com">infomarealta@gmail.com</a></li>
+            </ul>
+        </div>
+
+        <!-- Coluna 4: Redes Sociais -->
+        <div class="footer-col">
+            <h4 class="footer-title">Redes Sociais</h4>
+            <ul class="footer-socials">
+                <li>
+                    <a href="https://instagram.com" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook.com" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+         <div class="footer-bottom">
+        <p>&copy; 2024 Maré Alta Resort. Todos os direitos reservados.</p>
+    </div>
+    </div>
+</footer>
+
+<script src="./scripts/homepage.js"></script>
 </body> 
-
 </html>

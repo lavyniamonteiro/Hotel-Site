@@ -4,6 +4,38 @@ function toggleMenu(){
     menuLista.classList.toggle("menu-ativo");
 }
 hamburguer.addEventListener('click', toggleMenu);
+/* */
+//abrir e fechar
+hamburguer.addEventListener("click", () => {
+    menuAberto = !menuAberto;
+    menu.style.display = menuAberto ? "flex" : "none";
+});
+
+//aparece barra fixa
+let lastScroll = 0;
+const topBar = document.querySelector(".top-bar");
+
+window.addEventListener("scroll", () => {
+    const current = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+
+    if (current > lastScroll && current > 50) {
+        // Descendo → mostra a barra
+        topBar.classList.add("show");
+    } else if (current < lastScroll && current > 0) {
+        // Subindo → mostra a barra, exceto se estiver no topo
+        topBar.classList.add("show");
+    }
+
+    if (current === 0) {
+        // No topo → esconde a barra
+        topBar.classList.remove("show");
+    }
+
+    lastScroll = current;
+});
+
+
 
 //ANIMAÇÃO DOS NUMEROS 
 const spans = document.querySelectorAll('.animacao span[data-count]'); //seleciona todos os spans dentro de .animacao com data-count
@@ -47,3 +79,45 @@ medidas.bottom > 0 → a base do span ainda não passou completamente para cima 
 }
 window.addEventListener("scroll", startAnimacao);
 window.addEventListener('load', startAnimacao);
+
+
+
+// CARROSSEL DE FOTOS
+// CARROSSEL DE FOTOS
+const slides = document.querySelector('.slides');
+const slideElements = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.carousel-btn-prev');
+const nextBtn = document.querySelector('.carousel-btn-next');
+const indicators = document.querySelectorAll('.indicator');
+
+let currentSlide = 0;
+const totalSlides = slideElements.length;
+
+function goToSlide(n) {
+    currentSlide = n;
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentSlide);
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    goToSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    goToSlide(currentSlide);
+}
+
+nextBtn.addEventListener('click', nextSlide);
+prevBtn.addEventListener('click', prevSlide);
+
+indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => goToSlide(index));
+});
+
+// Auto-play
+setInterval(nextSlide, 5000);
