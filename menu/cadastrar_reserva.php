@@ -1,7 +1,7 @@
 <?php
 include('../conf/conexao.php');
 
-// Se o usuário já escolheu o tipo, buscar os quartos disponíveis daquele tipo
+
 $quartosDisponiveis = [];
 if (isset($_POST['tipo'])) {
     $tipoEscolhido = $_POST['tipo'];
@@ -10,7 +10,7 @@ if (isset($_POST['tipo'])) {
     $quartosDisponiveis = $conexao->query($sqlQuartos);
 }
 
-// Se o formulário final foi enviado (com escolha do quarto)
+
 if (isset($_POST['reservar'])) {
 
     $id_quarto = $_POST['id_quarto'];
@@ -20,12 +20,12 @@ if (isset($_POST['reservar'])) {
     $checkin   = $_POST['checkin'];
     $checkout  = $_POST['checkout'];
 
-    // Inserir a reserva
+   
     $sqlReserva = "INSERT INTO reservas (id_quarto, nome, email, telefone, checkin, checkout)
                    VALUES ('$id_quarto', '$nome', '$email', '$telefone', '$checkin', '$checkout')";
 
     if ($conexao->query($sqlReserva) === TRUE) {
-        // Atualiza status do quarto
+      
         $conexao->query("UPDATE quartos SET status = 'ocupado' WHERE id = '$id_quarto'");
         echo "Reserva concluída com sucesso!";
     } else {
@@ -36,7 +36,7 @@ if (isset($_POST['reservar'])) {
 
 <h2>Nova Reserva</h2>
 
-<!-- ETAPA 1: escolher o tipo -->
+
 <form method="POST">
     <label>Selecione o tipo de quarto:</label><br>
 
@@ -56,7 +56,7 @@ if (isset($_POST['reservar'])) {
 
 <br>
 
-<!-- ETAPA 2: exibir quartos disponíveis do tipo escolhido -->
+
 <?php if (!empty($quartosDisponiveis) && $quartosDisponiveis->num_rows > 0): ?>
 
 <form method="POST">
@@ -88,7 +88,7 @@ if (isset($_POST['reservar'])) {
     <label>Check-out:</label><br>
     <input type="date" name="checkout" required><br><br>
 
-    <!-- Campo oculto para manter o tipo escolhido -->
+    
     <input type="hidden" name="tipo" value="<?= $tipoEscolhido ?>">
 
     <button type="submit" name="reservar">Concluir Reserva</button>
