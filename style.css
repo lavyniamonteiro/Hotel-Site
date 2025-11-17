@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: "poppins", sans-serif;
     margin-bottom: 7px;
 }
 
@@ -55,11 +55,13 @@ input {
     background: #0a7db5;
     color: #fff;
     cursor: pointer;
+    font-family: "Inter", sans-serif;
 }
 
 .btn.ghost {
     background: transparent;
     border: 2px solid #fff;
+    font-family: "Inter", sans-serif;
 }
 
 .toggle-box {
@@ -69,6 +71,7 @@ input {
     position: absolute;
     right: 0;
     transition: 0.6s ease-in-out;
+    border-radius: 50px 0 0 50px;
 }
 
 .toggle {
@@ -85,21 +88,7 @@ input {
 .toggle-left { left: 10%; }
 .toggle-right { right: -100%; }
 
-.toggle-left h2{
-    margin-bottom: 7px;
-}
 
-.toggle-left p{
-    margin-bottom: 7px;
-}
-
-.toggle-right h2{
-    margin-bottom: 7px;
-}
-
-.toggle-right p{
-    margin-bottom: 7px;
-}
 
 .container.active .login {
     left: -50%;
@@ -111,6 +100,8 @@ input {
 
 .container.active .toggle-box {
     right: 50%;
+    border-radius: 0 50px 50px 0;
+
 }
 
 .container.active .toggle-left {
