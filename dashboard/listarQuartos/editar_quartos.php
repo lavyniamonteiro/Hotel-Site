@@ -1,5 +1,5 @@
 <?php
-include('C:\xampp\htdocs\Hotel-Site\phpScripts\conf\conexao.php');
+include('../../phpScripts/conf/conexao.php');
 ?>
 
 <form method="get">
@@ -75,5 +75,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <textarea name="descricao"><?= $quarto['descricao'] ?></textarea><br><br>
 
     <button type="submit">Salvar</button>
+    <button type="button" onclick="window.location.href='../listarQuartos/listar_quartos.php'">Voltar</button>
 </form>
-<a href="../listarQuartos/listar_quartos.php">Voltar</a>

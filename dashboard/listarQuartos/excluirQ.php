@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar quartos</title>
+    <title>Excluir quartos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="editar.css">
+    <link rel="stylesheet" href="excluir.css">
 </head>
 
 <body>  
@@ -37,11 +37,11 @@
     </aside>
     <section class="main-content">
         <header class="header">
-            <h1>Editar Quartos</h1>
+            <h1>Excluir Quartos</h1>
             <span>Bem-vindo, <strong>Funcionário Maré Alta</strong>!</span>
         </header>        
-        <div class="editar-form">
-        <?php include 'editar_quartos.php'; ?>
+        <div class="excluir">
+        <?php include 'excluir_quartos.php'; ?>
         </div>
     </section>
 </body>

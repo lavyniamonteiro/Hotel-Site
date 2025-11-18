@@ -34,8 +34,8 @@
                 <td><?= $row['status'] ?></td>
                 <td><?= $row['descricao'] ?></td>
                 <td>
-                    <a href="./editar/editar.php" class="editarbtn">Editar</a> |
-                    <a href="excluir_quartos.php?id=<?= $row['id'] ?>" onclick="return confirm('Deseja excluir este quarto?')" class="excluirbtn">Excluir</a>
+                    <a href="editar.php" class="editarbtn">Editar</a> |
+                    <a href="excluirQ.php?id=<?= $row['id'] ?>" onclick="return confirm('Deseja excluir este quarto?')" class="excluirbtn">Excluir</a>
                 </td>
             </tr>
         <?php } ?>
