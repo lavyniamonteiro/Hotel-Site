@@ -33,7 +33,7 @@
 }
 
 .rooms-title {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Dancing Script";
     font-size: 3rem;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);

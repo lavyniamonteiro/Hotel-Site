@@ -27,7 +27,6 @@ if (isset($_POST['reservar'])) {
     if ($conexao->query($sqlReserva) === TRUE) {
       
         $conexao->query("UPDATE quartos SET status = 'ocupado' WHERE id = '$id_quarto'");
-        echo "Reserva concluída com sucesso!";
     } else {
         echo "Erro ao reservar: " . $conexao->error;
     }

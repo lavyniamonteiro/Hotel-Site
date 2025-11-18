@@ -184,7 +184,7 @@ button.menu-letras:hover {
     width: 23.7rem;
     height: 23rem;
     display: block;
-    z-index: 1;
+    z-index: -1;
 }
 
 #texto-header{
@@ -325,6 +325,8 @@ button.menu-letras:hover {
 }
 .reserva-rapida {
     display: none;
+    position: relative;
+    z-index: 1002;
 }
 
 .aposAnima h1{
@@ -814,6 +816,8 @@ button.menu-letras:hover {
         color: #EAEAEA;
         padding: 4rem 1.5rem;
         font-family: 'Inter', sans-serif; 
+        position: relative; /* permite z-index funcionar */
+        z-index: 1000; /* fica acima de elementos do header quando necessário */
     }
 
     .footer-container {
@@ -904,7 +908,7 @@ button.menu-letras:hover {
 
 @media (min-width: 768px) {
     /*HEADER*/
-.img-header{
+    .img-header{
     position: absolute;
     transform: translate(-50%,-50%);
     top: 540%;
@@ -912,7 +916,7 @@ button.menu-letras:hover {
     width: 101%;
     height: auto;
     display: block;
-    z-index: 1;
+    z-index: -1;
 }
 #texto-header{  
     font-family: "Dancing Script";
