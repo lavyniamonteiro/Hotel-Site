@@ -1129,6 +1129,50 @@ button.menu-letras:hover {
         font-size: 1.1rem;
     }
 
+
+    .container {
+    /* 1. LAYOUT 2x2: Usa Grid */
+    display: grid;
+    /* Define 2 colunas de largura igual (1 fração de espaço cada) */
+    grid-template-columns: 1fr 1fr;
+    /* Define um espaçamento (margem) entre os blocos */
+    gap: 10px;
+    
+    /* Centralização e Limitação de Largura (opcional, mas recomendado) */
+    max-width: 800px;
+    margin: 20px auto; 
+}
+
+.bloco {
+    /* 2. TAMANHO E CENTRAGEM */
+    min-height: 200px; /* Garante uma altura mínima para o bloco */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho total */
+    
+    /* Centra o texto horizontal e verticalmente */
+    display: flex;
+    align-items: center; /* Alinhamento vertical */
+    justify-content: center; /* Alinhamento horizontal */
+    
+    /* Estilo do Texto */
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase; /* Deixa o texto em maiúsculas, como na imagem */
+    text-align: center;
+}
+
+/* 3. CORES: Blocos de Imagem (Azul Escuro) */
+.bloco-imagem {
+    background-color: #1f77b4; /* Tonalidade de azul semelhante à imagem */
+    color: white; /* Cor do texto em branco */
+}
+
+/* 4. CORES: Blocos de Texto/Descrição (Cinza Claro) */
+.bloco-texto {
+    background-color: #e0e0e0; /* Tonalidade de cinza claro */
+    color: black; /* Cor do texto em preto */
+}
+
 /*APOS ANIMACAO*/
 .aposAnima {
     display: flex;

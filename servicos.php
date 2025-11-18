@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/servicos.css">
     <!--FONTE-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,6 +124,34 @@ rel="stylesheet">
         </button>
     </div>
 </section>
+
+<div class="container">
+    <?php
+        // Bloco 1: Imagem (Superior Esquerda)
+        echo '<div class="bloco bloco-imagem">';
+        echo 'IMAGEM';
+        // Você pode inserir o código para uma imagem real aqui:
+        // echo '<img src="caminho/para/sua/imagem.jpg" alt="Descrição da Imagem">';
+        echo '</div>';
+
+        // Bloco 2: Piscina (Superior Direita)
+        echo '<div class="bloco bloco-texto">';
+        echo 'Piscina (e Área de Lazer Aquática)';
+        // Se este conteúdo viesse de um banco de dados, usaria uma variável PHP:
+        // echo $conteudo_piscina;
+        echo '</div>';
+
+        // Bloco 3: Descrição (Inferior Esquerda)
+        echo '<div class="bloco bloco-texto">';
+        echo 'DESCRIÇÃO';
+        echo '</div>';
+
+        // Bloco 4: Imagem (Inferior Direita)
+        echo '<div class="bloco bloco-imagem">';
+        echo 'IMAGEM';
+        echo '</div>';
+    ?>
+</div>
 
 
 <section id="gradiente">
