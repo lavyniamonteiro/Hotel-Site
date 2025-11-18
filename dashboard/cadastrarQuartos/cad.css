@@ -102,38 +102,46 @@ body {
     font-size: 2.2rem;
 }
 
-.tabela-quartos table{
-    width: 100%;
-    background: white;
-    margin-top: 1.5rem;
-}
-.tabela-quartos th{
-    background: var(--main-color);
-    color: white;
-}
-.tabela-quartos h2{
+.tabela-cad label{
     color: var(--main-color);
-    font-size: 1.9rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+.tabela-cad input{
+margin-bottom: 1rem;
+width: 100%;
+padding: 0.7rem;
+border-radius: 2px;
+border: 1px solid #ccc;
 }
 
-.editarbtn{
-    color: rgb(9, 74, 135);
-    text-decoration: none;
+.tabela-cad select{
+    background: white;
+    padding: 0.7rem;
+    width: 100%;
+    font-size: 0.9rem;
+    color: black;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
 }
-.excluirbtn{
-    color: red;
-    text-decoration: none;
+.tabela-cad textarea{
+    background: white;
+    padding: 0.7rem;
+    width: 100%;
+    font-size: 0.9rem;
+    color: black;
+    border-radius: 2px;
+    border: 1px solid #ccc;
 }
-.new{
+.tabela-cad button{
+    background-color: var(--main-color);
     color: white;
-    text-decoration: none;
-    background: #0e414d;
-    padding: 0.6rem;
-    margin-bottom: 2rem;
-    border-width: 0;
-    border-radius: 3px;
-}   
-.tabela-quartos td{
-    text-align: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    margin-right: 10px;
 }

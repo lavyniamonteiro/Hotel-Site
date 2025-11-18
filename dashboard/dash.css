@@ -35,7 +35,10 @@ body {
     color: white;
     overflow-y: auto;
 }
-
+.alta{
+    text-decoration: none;
+    color: white;
+}
 .sidebar h2 {
     text-align: center;
     margin-bottom: 1.8rem;
@@ -45,7 +48,9 @@ body {
     color: white;
     font-family: "Inter";
 }
-
+.alta{
+    text-decoration: none;
+}
 .sidebar h3 {
     font-size: 0.9rem;
     text-transform: uppercase;
