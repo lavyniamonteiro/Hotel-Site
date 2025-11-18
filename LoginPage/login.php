@@ -16,7 +16,7 @@
         <h2>Fazer Login</h2>
         <p>Use seu CPF e Senha</p>
 
-        <form action="login.php" method="POST">
+        <form action="../dashboard/dashboard.php" method="POST">
             <input type="text" name="cpf" placeholder="CPF" required>
             <input type="password" name="senha" placeholder="Senha" required>
             <button type="submit" class="btn">Entrar</button>

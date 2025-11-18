@@ -42,24 +42,21 @@ rel="stylesheet">
         <ul id="menu-aberto">
          <!-- Adicione a classe "menu-dropdown" aqui -->
         <li class="menu-dropdown">
-            <a href="#" class="menu-letras">Hotel <i class="fa-solid fa-angle-down"></i></a>
+            <a href="homepage.html" class="menu-letras" >Hotel <i class="fa-solid fa-angle-down"></i></a>
             <ul>
                 <li><a href="#" class="dropstyle">Serviços</a></li>
-                <li><a href="#" class="dropstyle">Pré-Check In</a></li>
             </ul>
         </li>
          <!-- Adicione a classe "menu-dropdown" aqui também -->
         <li class="menu-dropdown">
             <a href="#" class="menu-letras">Acomodações <i class="fa-solid fa-angle-down"></i></a>
             <ul>
-                <li><a href="#" class="dropstyle">Quarto Comum</a></li>
-                <li><a href="#" class="dropstyle">Quarto Triplo</a></li>
-                <li><a href="#" class="dropstyle">Quarto Premium</a></li>
+                <li><a href="../quartosPage/quartos.html" class="dropstyle">Quartos</a></li>
             </ul>
         </li>
 
-        <li><a href="#" class="menu-letras">Sobre</a></li>
-        <li><button class="menu-letras">Reservar</button></li> 
+        <li><a href="../sobrePage/sobre.html" class="menu-letras">Sobre</a></li>
+        <li><button class="menu-letras" onclick="window.location.href='#'">Reservar</button></li> 
     </ul>
     </nav>
 
@@ -69,11 +66,11 @@ rel="stylesheet">
             <img src="./images/DESKFOTO.png" alt="Foto do hotel" class="img-header">
             <h1 id="texto-header">Maré Alta</h1>
             <h2 id="resort-header">R E S O R T</h2>
-            <a href=""><button id="botao-header">Reserve Agora | ➔ </button></a>
+            <a href="#explore"><button id="botao-header">Explore Agora | ➔ </button></a>
         </div>
     </header>
     <!--ANIMAÇÃO -->
-    <section class="secao">
+    <section class="secao" id="explore">
         <div class="title-div">
             <h1 class="title">Por que escolher a Maré Alta?</h1>
             <h2 class="subtitle">Números que falam por si só</h2>
@@ -131,7 +128,7 @@ rel="stylesheet">
         <h3>Entre o azul intenso do mar e o dourado das areias, o Maré Alta Resort é o destino perfeito para quem busca conforto, descanso e momentos inesquecíveis.
             <br>
             Desperte com o som das ondas, saboreie o melhor da gastronomia local e desfrute de uma estrutura completa à beira-mar.</h3>   
-        <button class="mais">Saiba mais</button>
+        <button class="mais" onclick="window.location.href='../sobrePage/sobre.html'">Saiba mais</button>
         </div>
         <img src="./images/hotel1.png   " alt="imagem do hotel" class="img1">
 
@@ -243,10 +240,11 @@ rel="stylesheet">
         <div class="footer-col">
             <h4 class="footer-title">Navegação</h4>
             <ul class="footer-links">
-                <li><a href="#quartos">Quartos</a></li>
-                <li><a href="#quartos">Serviços</a></li>
-                <li><a href="#quartos">Pré-Check In</a></li>
-                <li><a href="#servicos">Sobre</a></li>
+                <li><a href="../quartosPage/quartos.html">Quartos</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="../sobrePage/sobre.html">Sobre</a></li>
+                <li><a href="../LoginPage/login.php">Login</a></li>
+
             </ul>
         </div>
 
@@ -254,7 +252,7 @@ rel="stylesheet">
         <div class="footer-col">
             <h4 class="footer-title">Contato</h4>
             <ul class="footer-contact">
-                <li><a href="tel:+558333333333">+55 (83 ) 3333-3333</a></li>
+                <li><a href="tel:+558333333333">+55 (83 ) 98910-1761</a></li>
                 <li><a href="mailto:infomarealta@gmail.com">infomarealta@gmail.com</a></li>
             </ul>
         </div>

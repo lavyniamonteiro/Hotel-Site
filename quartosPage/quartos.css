@@ -1,0 +1,235 @@
+:root {
+    --main-color: #125769;
+}
+
+.rooms-header {
+    /* Usar uma imagem de fundo que represente bem as acomodações */
+    background-image: url('./imagesquartos/rooms_header_image.jpg'); /* Substituir por imagem real */
+    background-size: cover;
+    background-position: center;
+    height: 50vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 3rem; /* Espaço para o menu fixo */
+}
+
+.rooms-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.rooms-header-content {
+    position: relative;
+    z-index: 10;
+    color: white;
+}
+
+.rooms-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.rooms-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+
+.rooms-main-content {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.room-card {
+    display: flex;
+    flex-direction: column; 
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+.room-image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.room-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover .room-image {
+    transform: scale(1.05);
+}
+
+.room-details {
+    padding: 1.5rem;
+}
+
+.room-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-bottom: 0.5rem;
+}
+
+.room-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* Lista de Características */
+.room-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas em mobile */
+    gap: 0.8rem;
+}
+
+.room-features li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.room-features li i {
+    color: var(--main-color);
+    margin-right: 0.5rem;
+}
+
+/* Área de Preço */
+.room-price-area {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: baseline;
+}
+
+.room-price-from {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #777;
+    margin-right: 0.5rem;
+}
+
+.room-price {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 2.5rem;
+    color: var(--main-color);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.room-price-night {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: #777;
+    margin-left: 0.3rem;
+}
+
+/* Botão de Reserva */
+.button-reservar-rooms {
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button-reservar-rooms:hover {
+    background-color: #0e4452; 
+}
+
+
+@media (min-width: 768px) {
+    .rooms-header {
+        height: 60vh;
+    }
+
+    .rooms-title {
+        font-size: 4rem;
+    }
+
+    .rooms-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .room-card {
+        flex-direction: row; 
+        min-height: 350px;
+    }
+
+    .room-card-reverse {
+        flex-direction: row-reverse; /* Inverte a ordem para o layout em zigue-zague */
+    }
+
+    .room-image-container {
+        width: 50%;
+        height: auto;
+    }
+
+    .room-details {
+        width: 50%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .room-features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .button-reservar-rooms {
+        width: auto;
+        align-self: flex-start;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .rooms-main-content {
+        padding: 3rem 2rem;
+    }
+
+    .room-card {
+        margin-bottom: 4rem;
+    }
+
+    .room-name {
+        font-size: 2.2rem;
+    }
+
+    .room-features {
+        grid-template-columns: 1fr 1fr; 
+    }
+}

@@ -127,7 +127,7 @@
     color: #fffafa;
     text-decoration: none;
     font-size: 1rem;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
 #menu-aberto li > ul li a:hover {
