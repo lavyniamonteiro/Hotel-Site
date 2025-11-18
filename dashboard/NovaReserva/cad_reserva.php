@@ -27,7 +27,7 @@
         <h3><i class="fas fa-book"></i> Reservas</h3>
         <ul>
             <li><a href="../listar_reservas/reservas.php"><i class="fas fa-calendar-alt"></i> Listar Reservas</a></li>
-            <li><a href="cadastrar_reserva.php"><i class="fas fa-calendar-plus"></i> Fazer Reserva</a></li>
+            <li><a href="cad_reserva.php"><i class="fas fa-calendar-plus"></i> Fazer Reserva</a></li>
         </ul>
 
         <hr class="hrr">

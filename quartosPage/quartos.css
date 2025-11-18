@@ -13,7 +13,7 @@
     justify-content: center;
     text-align: center;
     position: relative;
-    margin-top: 4rem; /* Espaço para o menu fixo */
+    margin-top: 3rem; /* Espaço para o menu fixo */
 }
 
 .rooms-header::before {
