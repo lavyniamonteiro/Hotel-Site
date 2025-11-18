@@ -1,19 +1,13 @@
-/* ==========================================================================
-   Estilos Específicos para a Página de Acomodações (quartos.css)
-   ========================================================================== */
-
-/* Variável de cor principal já definida em homepage.css */
 :root {
     --main-color: #125769;
 }
 
-/* 1. HEADER DA PÁGINA DE QUARTOS */
 .rooms-header {
     /* Usar uma imagem de fundo que represente bem as acomodações */
-    background-image: url('./images/rooms_banner_placeholder.jpg'); /* Substituir por imagem real */
+    background-image: url('./imagesquartos/rooms_header_image.jpg'); /* Substituir por imagem real */
     background-size: cover;
     background-position: center;
-    height: 50vh; /* Altura menor que o header da homepage para focar no conteúdo */
+    height: 50vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +23,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Overlay escuro para melhor leitura do texto */
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .rooms-header-content {
@@ -52,7 +46,7 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-/* 2. SEÇÃO PRINCIPAL DE QUARTOS (CARDS) */
+
 .rooms-main-content {
     padding: 2rem 1rem;
     max-width: 1200px;
@@ -61,7 +55,7 @@
 
 .room-card {
     display: flex;
-    flex-direction: column; /* Padrão: empilhado em telas pequenas */
+    flex-direction: column; 
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -126,3 +120,116 @@
     margin-right: 0.5rem;
 }
 
+/* Área de Preço */
+.room-price-area {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: baseline;
+}
+
+.room-price-from {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #777;
+    margin-right: 0.5rem;
+}
+
+.room-price {
+    font-family: 'Londrina Solid', cursive;
+    font-size: 2.5rem;
+    color: var(--main-color);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.room-price-night {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: #777;
+    margin-left: 0.3rem;
+}
+
+/* Botão de Reserva */
+.button-reservar-rooms {
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button-reservar-rooms:hover {
+    background-color: #0e4452; 
+}
+
+
+@media (min-width: 768px) {
+    .rooms-header {
+        height: 60vh;
+    }
+
+    .rooms-title {
+        font-size: 4rem;
+    }
+
+    .rooms-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .room-card {
+        flex-direction: row; 
+        min-height: 350px;
+    }
+
+    .room-card-reverse {
+        flex-direction: row-reverse; /* Inverte a ordem para o layout em zigue-zague */
+    }
+
+    .room-image-container {
+        width: 50%;
+        height: auto;
+    }
+
+    .room-details {
+        width: 50%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .room-features {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .button-reservar-rooms {
+        width: auto;
+        align-self: flex-start;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .rooms-main-content {
+        padding: 3rem 2rem;
+    }
+
+    .room-card {
+        margin-bottom: 4rem;
+    }
+
+    .room-name {
+        font-size: 2.2rem;
+    }
+
+    .room-features {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
