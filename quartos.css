@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Estilos Específicos para a Página de Acomodações (quartos.css)
+   ========================================================================== */
+
+/* Variável de cor principal já definida em homepage.css */
+:root {
+    --main-color: #125769;
+}
+
+/* 1. HEADER DA PÁGINA DE QUARTOS */
+.rooms-header {
+    /* Usar uma imagem de fundo que represente bem as acomodações */
+    background-image: url('./images/rooms_banner_placeholder.jpg'); /* Substituir por imagem real */
+    background-size: cover;
+    background-position: center;
+    height: 50vh; /* Altura menor que o header da homepage para focar no conteúdo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-top: 4rem; /* Espaço para o menu fixo */
+}
+
+.rooms-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay escuro para melhor leitura do texto */
+}
+
+.rooms-header-content {
+    position: relative;
+    z-index: 10;
+    color: white;
+}
+
+.rooms-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.rooms-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* 2. SEÇÃO PRINCIPAL DE QUARTOS (CARDS) */
+.rooms-main-content {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.room-card {
+    display: flex;
+    flex-direction: column; /* Padrão: empilhado em telas pequenas */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    overflow: hidden;
+}
+
+.room-image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.room-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover .room-image {
+    transform: scale(1.05);
+}
+
+.room-details {
+    padding: 1.5rem;
+}
+
+.room-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-bottom: 0.5rem;
+}
+
+.room-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* Lista de Características */
+.room-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas em mobile */
+    gap: 0.8rem;
+}
+
+.room-features li {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.room-features li i {
+    color: var(--main-color);
+    margin-right: 0.5rem;
+}
+
