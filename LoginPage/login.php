@@ -27,11 +27,10 @@
         <h2>Criar Conta</h2>
         <p>Use o CPF para criar sua conta</p>
 
-        <form action="cadastro.php" method="POST">
+        <form action="../phpScripts/usuarios/cadastrar_usuarios.php" method="POST">
             <input type="text" name="cpf" placeholder="CPF" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="senha" placeholder="Senha" required>
-            <input type="text" name="chave" placeholder="Chave" required>
             <button type="submit" class="btn">Cadastrar-se</button>
         </form>
     </div>
@@ -53,7 +52,7 @@
     </div>
 
 </div>
-
+       
 <script src="script.js"></script>
 
 </body>
