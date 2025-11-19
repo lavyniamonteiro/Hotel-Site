@@ -1,0 +1,1607 @@
+:root {
+    --main-color: #125769;
+}
+
+/*removem os espaços padrão que os navegadores aplicam*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+
+/* bloqueia o scroll horizontal */
+ html,body {
+  overflow-x: hidden;   
+    width: 100%;
+    min-width: 100%;
+    
+}
+
+/* Barra fixa no topo (começa escondida) */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8%;
+    background: var(--main-color);
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    z-index: 999;
+
+    transform: translateY(-100%);     /* escondida */
+    transition: transform 0.3s ease;  /* animação suave */
+}
+
+/* Quando aparece */
+.top-bar.show {
+    transform: translateY(0);
+}
+/*------------------------------------------*/
+
+#menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 1000;
+}
+/* design da lista como um inteiro */
+#menu-aberto{
+    background: var(--main-color);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    padding: 4rem 2rem 2rem 2rem;
+    height: 110vh;
+    width: 250px;
+}
+/*design de cada elemento individualmente*/
+
+.menu-letras {
+    display: block;
+    font-family: "Inter";
+    color: #fffafa;
+    text-decoration: none; 
+    font-size: 1.1rem;
+    padding: 1rem;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+.menu-letras:hover {
+    color: #051444;
+}
+#hamburguer{
+    display: block;
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    position: fixed;
+    z-index: 1001;
+    top: 0.6rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+}
+#hamburguer span{
+    width: 32px;
+    display: block;
+    height: 3px;  
+    margin-bottom: 6px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+}
+
+/* Classe que o JavaScript vai alternar */
+.menu-ativo {
+    transform: translateX(0) !important;
+}
+
+/* DROPDOWN MOBILE FIRST */
+#menu-aberto li {
+    position: relative;
+    list-style: none;
+}
+
+#menu-aberto li > ul {
+    list-style: none;
+    padding: 0.5rem 0 0.5rem 1rem;
+    margin: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+#menu-aberto li > ul li a {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    color: #fffafa;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+#menu-aberto li > ul li a:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Mostrar dropdown quando o li tem a classe active */
+#menu-aberto li.menu-dropdown-active > ul {
+    display: flex;
+}
+
+/* Ícone de seta do dropdown */
+#menu-aberto li > a i {
+    transition: transform 0.3s ease;
+    margin-left: 0.4rem;
+}
+
+#menu-aberto li.menu-dropdown-active > a i {
+    transform: rotate(180deg);
+}
+
+/* Estilo especial para o botão Reservar */
+button.menu-letras {
+    background: white;
+    color: var(--main-color);
+    border: none;
+    font-family: "Inter";
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.menu-letras:hover {
+    background: #152692;
+    color: white;
+}
+/*------------------------------------------*/
+.bg-header{
+    position: relative;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ .img-header{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 540%;
+    left: 50%;
+    width: 23.7rem;
+    height: 23rem;
+    display: block;
+    z-index: -1;
+}
+
+#texto-header{
+    font-family: "Dancing Script";
+    color: rgb(255, 255, 255);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 500%;
+    left: 50%;
+    z-index: 998;
+    font-size: 2.5rem;
+    text-shadow: 0px 4px 16px rgb(0, 0, 0, 10);
+}
+#resort-header{
+    font-family: "Montserrat";
+    color: rgb(255, 255, 255);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 600%;
+    left: 50%;
+    z-index: 998;
+    font-weight: 440;
+    font-size: 1rem;
+    text-shadow: 0px 4px 16px rgb(0, 0, 0, 10);
+
+
+}
+#botao-header{
+    background: var(--main-color);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 690%;
+    left: 50%;
+    z-index: 998;
+}
+
+/* Novo layout para títulos e animações */
+.secao{
+        background: #E6F7FA;
+        position: relative;
+}
+.title-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0 1rem 0;
+}
+.title {
+    font-size: 1.4rem;
+    color: #008994;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-top: 19rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    z-index: 988;
+
+}
+.subtitle {
+    font-size: 0.9rem;
+    color: #008994;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 2rem;
+    text-align: center;
+
+}
+.animacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 350px;
+    margin-left: 1rem;
+
+}
+.animacao h1 {
+    font-size: 2rem;
+    color: #008994;
+    margin-bottom: 0.2rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+.animacao h2{
+    font-size: 1rem;
+    color: #364153;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+.animacao h3{
+    font-size: 1rem;
+    color: #4A5565;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+
+.estrela{
+    margin-top: 0.4rem;
+   position: absolute;
+   transform: translate(-50%,-50%);
+    top: 42%;
+    left: 50%;
+   width: 10%;
+   z-index: 988;
+}
+.coracao{
+   position: absolute;
+   transform: translate(-50%,-50%);
+    top: 57%;
+    left: 50%;
+   width: 10%;
+   z-index: 988;
+}
+.medalha{
+    position: absolute;
+   transform: translate(-50%,-50%);
+    top: 72%;
+    left: 50%;
+   width: 10%;
+   z-index: 988;
+}
+.onda{
+     position: absolute;
+   transform: translate(-50%,-50%); 
+    top: 87%;
+    left: 50%;
+   width: 10%;
+   z-index: 988;
+}
+.reserva-rapida {
+    display: none;
+    position: relative;
+    z-index: 1002;
+}
+
+.aposAnima h1{
+    font-size: 1.2rem;
+    font-family: "Inter";
+    text-align: center;
+    text-align: left;
+    padding-left: 1.2rem;
+}
+.aposAnima h3{
+    font-size: 0.7rem;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: 500;
+    padding-left: 1.1rem;  
+    padding-right: 1.1rem;
+    margin-bottom: 1.0rem;
+}
+.mais{
+    color: var(--main-color);
+    background: #ffffff;
+    width: 6rem;
+    height: 2rem;
+    margin-left: 1.11rem;
+    border: 2px solid var(--main-color);
+    border-radius: 0.3rem;
+}
+
+.img1 {
+    width: 22rem;
+    height: auto;
+    display: block;
+    margin:  auto;
+    margin-top: 2.3rem;
+    border-radius: 9px;
+    margin-bottom: 3.4rem;
+}
+.slideFotos{
+    display: none;
+}
+.servicos{
+    position: relative;
+}
+.servicos h1{
+    font-family: 'Inter';
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+.card {
+  margin-bottom: 1.5rem;
+  display: block;
+  width: 80%; 
+  margin-left: auto; 
+  margin-right: auto; 
+  box-shadow: 2px 2px 11px rgb(0, 0, 0, 0.3);
+  border-radius: 23px;
+}
+.nadando{
+    width: 4.5rem;
+    height: auto;
+    position: absolute;
+    top: 3%;
+    left: 22%;
+    transform: translate(-50%,50%);
+}
+.prato{
+    width: 3.5rem;
+    height: auto;
+    position: absolute;
+    top: 28%;
+    left: 22%;
+    transform: translate(-50%,50%);
+}
+.spa{
+    width: 4rem;
+    height: auto;
+    position: absolute;
+    top: 53%;
+    left: 22%;
+    transform: translate(-50%,50%);
+}
+.acade{
+    width: 4rem;
+    height: auto;
+    position: absolute;
+    top: 78%;
+    left: 21%;
+    transform: translate(-50%,50%);
+}
+.nadandoT{
+    position: absolute;
+    top: 18%;
+    left: 32%;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.textoN{
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    font-size: 1rem;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 300;
+    width: 75%;
+    max-width: 30rem;
+}
+.pratoT{
+    position: absolute;
+    top: 41%;
+    left: 29.7%;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.textoP{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    font-size: 1rem;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 300;
+    width: 75%;
+    max-width: 30rem;
+}
+.spaT{
+    position: absolute;
+    top: 66%;
+    left: 33%;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.textoS{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    font-size: 1rem;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 300;
+    width: 75%;
+    max-width: 30rem;
+}
+.acadeT{
+    position: absolute;
+    top: 91%;
+    left: 26%;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+.textoA{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    font-size: 1rem;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 300;
+    width: 75%;
+    max-width: 30rem;
+}
+.card2{
+ margin-bottom: 2rem;
+  display: block;
+  width: 80%; 
+  margin-left: auto; 
+  margin-right: auto; 
+  box-shadow: 2px 2px 11px rgb(0, 0, 0, 0.3);
+}
+.acomodacoes{
+    position: relative;
+    padding-bottom: 2rem;
+}
+.acomodacoes h1{
+    font-family: 'Inter';
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+.ft1{
+    position: absolute;
+    top: 13%;
+    left: 49.9999981%;
+    transform: translate(-50%,-50%);
+    
+}
+.ft2{
+    position: absolute;
+    top: 43.8%;
+    left: 49.9999981%;
+    transform: translate(-50%,-50%);
+}
+.ft3{
+    position: absolute;
+    top: 74.8%;
+    left: 49.9999981%;
+    transform: translate(-50%,-50%);
+}
+
+.roomName1{
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    font-size: 1rem;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 300;
+    width: 75%;
+    max-width: 30rem;
+}
+.roomName2{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    font-size: 1rem;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 300;
+    width: 75%;
+    max-width: 30rem;
+}
+.roomName3{
+    position: absolute;
+    top: 86%;
+    left: 50%;
+    font-size: 1rem;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 300;
+    width: 75%;
+    max-width: 30rem;
+}
+.roomText1
+{
+    position: absolute;
+    top:26%;
+    left: 50%;
+    font-size: 0.8rem;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 300;
+    width: 75%;
+    max-width: 30rem;
+}
+.roomText2
+{
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    font-size: 0.8rem;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 300;
+    width: 75%;
+    max-width: 30rem;
+}
+.roomText3
+{
+    position: absolute;
+    top: 88%;
+    left: 50%;
+    font-size: 0.8rem;
+    transform: translate(-50%,-50%);
+    font-family: "Inter";
+    font-weight: 300;
+    width: 75%;
+    max-width: 30rem;
+}
+.numero{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.3rem;
+    text-align: left;
+    width: 75%;
+    max-width: 30rem;
+    color: var(--main-color);
+    font-weight: 700px;
+    font-family: "Londrina Solid";
+}
+.numero2{
+    position: absolute;
+    top: 61%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.3rem;
+    text-align: left;
+    width: 75%;
+    max-width: 30rem;
+    color: var(--main-color);
+    font-weight: 700px;
+    font-family: "Londrina Solid";
+}
+.numero3{
+    position: absolute;
+    top: 91%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.3rem;
+    text-align: left;
+    width: 75%;
+    max-width: 30rem;
+    color: var(--main-color);
+    font-weight: 700px;
+    font-family: "Londrina Solid";
+}
+.buttonReservar{
+    background: var(--main-color);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 29%;
+    left: 70%;
+    z-index: 998;
+}
+.buttonReservar2{
+    background: var(--main-color);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 60%;
+    left: 70%;
+    z-index: 998;
+}
+.buttonReservar3{
+    background: var(--main-color);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 90%;
+    left: 70%;
+    z-index: 998;
+}
+
+.locTitle{
+    font-family: "Inter";
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.mapa{
+    /* Centraliza a imagem do mapa usando margin: auto */
+    display: block; 
+    width: 90%;
+    max-width: 50rem;
+    margin: 0 auto 1.8rem auto; /* Centraliza horizontalmente e adiciona margem inferior */
+    box-shadow: 2px 2px 11px var(--main-color);
+    border-radius: 8px; /* Adicionado para suavizar cantos */
+
+}
+.loc h3{
+    font-family: "Inter";
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    margin-left: 20px;
+    margin-right: 12px;
+    text-align: left;
+    margin-bottom: 0.9rem;
+}
+
+.endereco-container i{
+    color: var(--main-color);
+    margin-left: 1.39rem;
+    margin-top: 1.3rem;
+    width: 3rem;
+    height: auto;
+}
+.endereco-info, .endereco-info2{
+    position: relative;
+}
+.end{
+    font-family: "Inter";
+    font-size: 0.9rem;
+    margin-top: -1.1rem;
+    margin-left: 2.7rem;
+}
+.locDescricao{
+    font-family: "Inter";
+    font-size: 0.9rem;
+    font-weight: 300;
+    position: absolute;
+    top: 19%;
+    left: 6%;
+    margin-bottom: 2rem;
+    }
+    .locDes{
+    font-family: "Inter";
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    position: absolute;
+    left: 6%;
+    top: 25%;
+    }
+
+    #gradiente{
+    background-image: linear-gradient(8deg, #3FB7F2 0%, #38A2D6 50%, #16445A 100%);
+    padding: 4rem 0.7rem;
+    margin-top: 3rem;
+    }
+    
+    #gradiente h1{
+        font-size: 2rem;
+        color: #F3F3F3;
+        margin-top: -2.7rem;
+        align-items: center;
+        text-align: center;
+    }
+   
+    #gradiente h3{
+        color: white;
+        font-family: "Inter";
+        font-weight: 300;
+        align-items: center;
+        text-align: center;
+        margin-top: 0.9rem;
+        font-size: 0.9rem;
+        margin-left: 1.2rem;
+        margin-right: 1.2rem;
+    }
+    .botoes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .botaoReservar{
+        background: white;
+        color: var(--main-color);
+        border-radius: 4px;
+        padding: 0.5rem 1rem; 
+        font-size: 0.9rem;
+        transition: background-color 0.3s, color 0.3s;
+        border: none;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        width: 10rem;
+        height: 2rem;
+    }
+
+     .botaofale{
+        border: none;
+        background: white;
+        color: var(--main-color);
+        border-radius: 4px;
+        padding: 0.5rem 1rem; 
+        margin: 0;
+        width: 10rem;
+        height: 2rem;
+        font-size: 0.9rem;
+        transition: background-color 0.3s, color 0.3s;
+    }
+      .botaoReservar:hover, .botaofale:hover {
+        background-color: #033f47;
+        color: white;
+    }
+    
+    footer{
+        background-color: #101820; 
+        color: #EAEAEA;
+        padding: 4rem 1.5rem;
+        font-family: 'Inter', sans-serif; 
+        position: relative; /* permite z-index funcionar */
+        z-index: 1000; /* fica acima de elementos do header quando necessário */
+    }
+
+    .footer-container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 2.5rem; 
+    }
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    }
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #FFFFFF;
+    }
+
+.footer-des {
+    font-size: 0.9rem;
+    color: #A9B4C2; 
+    margin: 0;
+    font-weight: 300;
+    }
+
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+    color: #FFFFFF;
+    }
+
+.footer-links,
+.footer-contact,
+.footer-socials {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; 
+    }
+
+
+.footer-links a,
+.footer-contact a {
+    color: #A9B4C2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: color 0.2s ease;
+    }
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #FFFFFF; 
+    }   
+
+.footer-socials a {
+    color: #A9B4C2;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; 
+    transition: color 0.2s ease;
+    }
+.footer-socials a:hover {
+    color: #FFFFFF;
+    }
+
+.footer-socials i {
+    font-size: 1.2rem; 
+    }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    color: #A9B4C2;
+}
+
+@media (min-width: 768px) {
+    /*HEADER*/
+    .img-header{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 540%;
+    left: 50%;
+    width: 101%;
+    height: auto;
+    display: block;
+    z-index: -1;
+}
+#texto-header{  
+    font-family: "Dancing Script";
+    color: rgb(255, 255, 255);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 650%;
+    left: 50%;
+    z-index: 998;
+    font-size: 5rem;
+    text-shadow: 0px 4px 16px rgb(0, 0, 0, 10);
+}
+#resort-header{
+    font-family: "Montserrat";
+    color: rgb(255, 255, 255);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 800%;
+    left: 50%;
+    z-index: 998;
+    font-weight: 440;
+    font-size: 2rem;
+    text-shadow: 0px 4px 16px rgb(0, 0, 0, 10);
+
+
+}
+#botao-header{
+    background: var(--main-color);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 960%;
+    left: 50%;
+    z-index: 998;
+}
+    /*MENU*/
+    #hamburguer {
+        display: none;
+    }
+    #menu {
+    position: fixed; /* Fixa na tela */
+    width: 100%; /* Ocupa a LARGURA TOTAL da tela */
+    z-index: 1000; 
+    background-color: var(--main-color); 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para dar profundidade */
+    padding: 0.5rem 1rem; /* Espaçamento interno vertical e horizontal */
+    display: flex; 
+    justify-content: flex-end; /* Alinha o conteúdo (o menu) à direita */
+
+}
+    #menu-aberto {
+        position: static; /* Volta ao fluxo normal, dentro do #menu */
+        transform: none !important;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem; /* Espaço entre os itens */
+        background: transparent; /* O fundo já está no #menu */
+        padding: 0;
+        height: auto;
+        width: auto;
+    }
+   .menu-letras {
+        padding: 0.35rem 0.6rem;
+        font-size: 1rem;
+        font-family: "Inter";
+        width: auto; }
+
+    button.menu-letras {
+        background: white;
+        color: var(--main-color);
+        border-radius: 4px;
+        padding: 0.5rem 1rem; 
+        margin: 0;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+}
+    button.menu-letras:hover {
+        background-color: #033f47;
+        color: white;
+    }
+
+/*ANIMAÇÃO*/
+
+.secao {
+    background: #E6F7FA;
+    padding: 4rem 1rem;
+    position: relative; 
+    margin-top: 30rem
+}
+
+.title-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem; /* Aumenta o espaço abaixo do subtítulo */
+}
+
+.title {
+    font-size: 1.8rem;
+    color: #008994;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0; /* Remove margens desnecessárias */
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #008994;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* O NOVO CONTÊINER QUE ALINHA AS COLUNAS */
+.animacao-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CADA BLOCO DE ANIMAÇÃO */
+.animacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+    /* Removendo propriedades que não são mais necessárias */
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+.estrela, .coracao, .medalha, .onda {
+    position: static; 
+    transform: none;  /* Remove qualquer translação */
+    width: 50px;      /* Define um tamanho fixo */
+    height: auto;
+    margin-bottom: 1rem; 
+}
+
+/* ESTILO DOS TEXTOS (usando suas classes) */
+.animacao h1 {
+    font-size: 2.5rem;
+    color: #008994;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+}
+
+.animacao h2.animacao-2 { /* Usando a classe que você criou */
+    font-size: 1rem;
+    color: #364153;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+.animacao h3.h3-animacao { /* Usando a classe que você criou */
+    font-size: 0.9rem;
+    color: #4A5565;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+/* PARTE DE RESERVA RAPIDA */
+    .reserva-rapida {
+        display: block; 
+        padding: 2rem 1rem;
+        margin-bottom: 2.5rem;
+        }
+    .reserva-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .reserva-botao {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        background-color: var(--main-color);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 0.8rem 1.5rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .reserva-botao:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .reserva-botao i {
+        font-size: 1.1rem;
+    }
+
+/*APOS ANIMACAO*/
+.aposAnima {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.conteudo-texto {
+    flex: 1;
+    max-width: 550px;
+}
+
+.aposAnima h1 {
+    font-size: 2rem;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    color: var(--main-color);
+}
+
+.aposAnima h3 {
+    font-size: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.mais {
+    margin-left: 1px;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    width: auto;
+    height: auto;
+    white-space: nowrap;
+    
+}
+
+.img1 {
+    flex: 1;
+    max-width: 500px;
+    width: 100%;
+    margin: 0;
+    height: auto;
+    text-align: right;
+    align-items: right;
+    display: block;
+    border-radius: 12px;
+}
+/* SERVIÇOS*/
+
+.servicos {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+.servicos h1 {
+    font-family: 'Inter';
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    grid-column: 1 / -1;
+    color: var(--main-color);
+}
+
+/* Cada card ocupa uma célula do grid */
+.servicos .card:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.servicos .card:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.servicos .card:nth-of-type(3) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.servicos .card:nth-of-type(4) {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.card {
+    position: relative;
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    height: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.3);
+    border-radius: 23px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nadando{
+    position: absolute;
+    top: 21%;
+    left: 8%;
+}
+.prato{
+    position: absolute;
+    top: 54%;
+    left: 7%;
+}
+.spa{
+    position: absolute;
+    top: 21%;
+    left: 56%;
+}
+.acade{
+    position: absolute;
+    top: 56%;
+    left: 56%;
+}
+.nadandoT{
+    position: absolute;
+    top: 40%;
+    left: 11%;
+}
+.pratoT{
+    position: absolute;
+    top: 75%;
+    left: 10%;
+}
+.spaT{
+    position: absolute;
+    top: 40%;
+    left: 60%;
+}
+.acadeT{
+    position: absolute;
+    top: 76%;
+    left: 58%;
+}
+.textoN{
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    font-size: 1.1rem;
+}
+.textoP{
+    position: absolute;
+    top: 80%;
+    left: 24.8%;
+    font-size: 1.1rem;
+}
+.textoS{
+    position: absolute;
+    top: 45%;
+    left: 73.7%;
+    font-size: 1.1rem;
+}
+.textoA{
+    position: absolute;
+    top: 80%;
+    left: 74%;
+}
+/* ACOMODAÇÕES */
+.acomodacoes{
+    display: none;
+}
+    /*slide de fotos*/
+ .slideFotos {
+    display: block; /* Mostra no desktop */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    margin-top: -4rem;
+    margin-bottom: 2rem;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #2E7D9E;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.slides {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botões de navegação */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: var(--main-color);
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn-prev {
+    left: 20px;
+}
+
+.carousel-btn-next {
+    right: 20px;
+}
+
+/* Indicadores (bolinhas) */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 20;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.indicator.active {
+    background: white;
+    width: 30px;
+    border-radius: 6px;
+}
+/*mapa*/
+.loc {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.locTitle {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+}
+
+.loc h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    margin-bottom: 2rem;
+}
+
+.mapa {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    display: block;
+}
+
+.endereco-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.endereco-info,
+.endereco-info2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.endereco-container i {
+    color: var(--main-color);
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+
+.end {
+    font-family: "Inter";
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: var(--main-color);
+}
+
+.locDescricao,
+.locDes {
+    font-family: "Inter";
+    font-size: 1rem;
+    font-weight: 300;
+    position: static;
+    margin: 0;
+}
+
+.endereco-praia {
+    display: block;
+}
+/* FOOTER */
+footer {
+    padding: 4rem 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* 4 colunas: primeira maior */
+    gap: 3rem;
+    align-items: start;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+.footer-des {
+    font-size: 1rem;
+    color: #A9B4C2;
+    margin: 0;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.footer-socials a:hover {
+    color: #FFFFFF;
+}
+
+.footer-socials i {
+    font-size: 1.3rem;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1; /* Ocupa todas as colunas */
+    
+}
+    #gradiente{
+        padding: 4rem;
+        height: 60%;
+    }
+    /*DROPDOWN*/
+    #menu-aberto {
+        position: static;   /* Tira o fixed que vem do mobile */
+        transform: none;
+        height: auto;
+        width: auto;
+        padding: 0;
+        background: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #menu-aberto > li {
+        display: inline-block;
+        position: relative; /* NECESSÁRIO para dropdown absoluto */
+    }
+
+    /* DROPDOWN ABSOLUTO */
+    #menu-aberto li ul {
+        display: block !important; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #ffffff;
+        min-width: 180px;
+        padding: .5rem 0;
+        border-radius: 5px;
+        border-top: 3px solid #125769;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all .25s ease;
+    }
+
+    #menu-aberto li ul li a {
+        padding: .8rem 1rem;
+        color: #000;
+        display: block;
+        white-space: nowrap;
+    }
+    .dropstyle{
+        font-family: "Inter";
+    }
+    .dropstyle:hover {
+        background-color: #033f47;
+        color: white;
+    }
+
+    /* HOVER MOSTRA DROPDOWN */
+   #menu-aberto > li.menu-dropdown:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+    /* seta gira no hover */
+    #menu-aberto > li:hover > a i {
+        transform: rotate(180deg);
+    }
+}
+
+    
+
+
+
+
+
+

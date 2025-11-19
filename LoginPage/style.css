@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+    margin-bottom: 7px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #ddd;
+}
+
+.container {
+    width: 850px;
+    height: 500px;
+    background: #fff;
+    border-radius: 15px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 0, 0, .2);
+}
+
+.form-box {
+    width: 50%;
+    padding: 60px;
+    position: absolute;
+    transition: 0.6s ease-in-out;
+}
+
+
+.login { left: 0; }
+.register { right: -50%; }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #999;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #125769;
+    color: #fff;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+}
+
+.btn.ghost {
+    background: transparent;
+    border: 2px solid #fff;
+    font-family: "Inter", sans-serif;
+}
+
+.toggle-box {
+    width: 50%;
+    height: 100%;
+    background: #125769;
+    position: absolute;
+    right: 0;
+    transition: 0.6s ease-in-out;
+    border-radius: 50px 0 0 50px;
+}
+
+.toggle {
+    color: #fff;
+    padding: 100px 40px;
+}
+
+.toggle-left, .toggle-right {
+    position: absolute;
+    width: 100%;
+    transition: 0.6s ease-in-out;
+}
+
+.toggle-left { left: 10%; }
+.toggle-right { right: -100%; }
+
+
+
+.container.active .login {
+    left: -50%;
+}
+
+.container.active .register {
+    right: 0;
+}
+
+.container.active .toggle-box {
+    right: 50%;
+    border-radius: 0 50px 50px 0;
+
+}
+
+.container.active .toggle-left {
+    left: -100%;
+}
+
+.container.active .toggle-right {
+    right: -10%;
+}

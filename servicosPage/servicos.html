@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Maré Alta Resort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="servicos.css">
+</head>
+
+<body>
+    <!-- MENU -->
+    <nav id="menu">
+        <div id="hamburguer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="menu-aberto">
+            <!-- Menu com Dropdown: Hotel -->
+            <li class="menu-item">
+                <a href="../homepage/homepage.html" class="menu-letras">Hotel<i class="fa-solid fa-angle-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="../servicosPage/servicos.html">Serviços</a></li>
+                </ul>
+            </li>
+
+            <!-- Menu com Dropdown: Acomodações -->
+            <li class="menu-item">
+                <a href="#" class="menu-letras">
+                    Acomodações 
+                    <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="../quartosPage/quartos.html">Quartos</a></li>
+                </ul>
+            </li>
+
+            <!-- Menu sem Dropdown -->
+            <li class="menu-item">
+                <a href="../sobrePage/sobre.html" class="menu-letras">Sobre</a>
+            </li>
+
+            <!-- Botão Reservar -->
+            <li class="menu-item">
+                <button class="menu-letras">Reservar</button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <header id="meu-header">
+        <div class="bg-header">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920" alt="Maré Alta Resort" class="img-header">
+            <h1 id="texto-header">Maré Alta</h1>
+            <h2 id="resort-header">R E S O R T</h2>
+        </div>
+    </header>
+   
+    <!-- SEÇÃO DE RESERVA RÁPIDA -->
+    <section class="reserva-rapida">
+        <div class="reserva-container">
+            <button class="reserva-botao">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Calendário</span>
+            </button>
+            <button class="reserva-botao">
+                <i class="fa-solid fa-user-group"></i>
+                <span>Hóspedes</span>
+            </button>
+            <button class="reserva-botao">
+                <i class="fa-solid fa-ticket"></i>
+                <span>Cupom</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE SERVIÇOS -->
+    <section class="servicos-section">
+        <h1>Nossos Serviços Exclusivos</h1>
+
+        <!-- Serviço 1: Piscina -->
+        <div class="servico-item">
+            <div class="servico-imagem">
+                <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600" alt="Piscina">
+            </div>
+            <div class="servico-descricao">
+                <h3><i class="fas fa-swimming-pool"></i> Piscina e Área de Lazer Aquática</h3>
+                <p>Nossa piscina de borda infinita oferece uma vista espetacular para o oceano. É o lugar perfeito para relaxar, tomar sol e desfrutar de drinks exclusivos do nosso bar molhado. A área aquática inclui também uma piscina infantil segura e aquecida.</p>
+            </div>
+        </div>
+
+        <!-- Serviço 2: Academia -->
+        <div class="servico-item">
+            <div class="servico-imagem">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600" alt="Academia">
+            </div>
+            <div class="servico-descricao">
+                <h3><i class="fas fa-dumbbell"></i> Academia e Espaço Fitness</h3>
+                <p>Mantenha sua rotina de exercícios mesmo durante as férias. Nossa academia é equipada com aparelhos modernos de cardio e musculação, oferecendo um ambiente climatizado e inspirador para o seu treino diário.</p>
+            </div>
+        </div>
+
+        <!-- Serviço 3: Spa -->
+        <div class="servico-item">
+            <div class="servico-imagem">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600" alt="Spa">
+            </div>
+            <div class="servico-descricao">
+                <h3><i class="fas fa-spa"></i> Spa e Serviços de Bem-Estar</h3>
+                <p>Permita-se um momento de total relaxamento em nosso Spa. Oferecemos uma variedade de massagens terapêuticas, tratamentos faciais e corporais, além de sauna e hidromassagem para renovar suas energias.</p>
+            </div>
+        </div>
+
+        <!-- Serviço 4: Restaurante -->
+        <div class="servico-item">
+            <div class="servico-imagem">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" alt="Restaurante">
+            </div>
+            <div class="servico-descricao">
+                <h3><i class="fas fa-utensils"></i> Restaurantes e Bares</h3>
+                <p>Desfrute de uma experiência gastronômica inesquecível. Nossos restaurantes oferecem culinária de alta qualidade, com foco em frutos do mar frescos e pratos regionais. Nossos bares servem coquetéis artesanais e bebidas premium.</p>
+            </div>
+        </div>
+
+        <!-- Serviço 5: Room Service -->
+        <div class="servico-item">
+            <div class="servico-imagem">
+                <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600" alt="Room Service">
+            </div>
+            <div class="servico-descricao">
+                <h3><i class="fas fa-concierge-bell"></i> Serviço de Quarto</h3>
+                <p>Para o seu conforto, oferecemos serviço de quarto 24 horas. Desfrute de refeições completas, lanches rápidos ou bebidas no conforto e privacidade da sua acomodação, a qualquer hora do dia ou da noite.</p>
+            </div>
+        </div>
+        
+        <!-- Serviço 6: Eventos -->
+        <div class="servico-item">
+            <div class="servico-imagem">
+                <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=600" alt="Eventos">
+            </div>
+            <div class="servico-descricao">
+                <h3><i class="fas fa-handshake"></i> Espaços para Eventos</h3>
+                <p>O Maré Alta possui salões e espaços modulares ideais para casamentos, conferências e reuniões corporativas. Oferecemos suporte completo de planejamento, catering e equipamentos audiovisuais de última geração.</p>
+            </div>
+        </div>
+
+        <!-- Serviço 7: Kids Club -->
+        <div class="servico-item">
+            <div class="servico-imagem">
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600" alt="Kids Club">
+            </div>
+            <div class="servico-descricao">
+                <h3><i class="fas fa-child"></i> Serviços para Famílias</h3>
+                <p>Pensando no conforto de toda a família, oferecemos o Kids Club com atividades monitoradas, além de serviço de babá sob demanda. Assim, os pais podem relaxar enquanto as crianças se divertem com segurança.</p>
+            </div>
+        </div>
+
+        <!-- Serviço 8: Pet-Friendly -->
+        <div class="servico-item">
+            <div class="servico-imagem">
+                <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=600" alt="Pet Friendly">
+            </div>
+            <div class="servico-descricao">
+                <h3><i class="fas fa-paw"></i> Pet-Friendly</h3>
+                <p>Seu melhor amigo é bem-vindo! Oferecemos comodidades especiais para animais de estimação, como caminhas, potes de ração e áreas designadas para passeios, garantindo que toda a família desfrute da estadia.</p>
+            </div>
+        </div>
+
+        <!-- Serviço 9: Concierge -->
+        <div class="servico-item">
+            <div class="servico-imagem">
+                <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600" alt="Concierge">
+            </div>
+            <div class="servico-descricao">
+                <h3><i class="fas fa-map-marked-alt"></i> Serviço de Concierge</h3>
+                <p>Nosso concierge está à disposição para organizar passeios, fazer reservas em restaurantes locais, providenciar transporte e oferecer recomendações personalizadas para que você explore o melhor da região.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="footer-title-main">Maré Alta Resort</h3>
+                <p class="footer-des">Seu refúgio de luxo à beira-mar</p>
+            </div>
+    
+            <div class="footer-col">
+                <h4 class="footer-title">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="../quartosPage/quartos.html">Quartos</a></li>
+                    <li><a href="../servicosPage/servicos.html">Serviços</a></li>
+                    <li><a href="../sobrePage/sobre.html">Sobre</a></li>
+                    <li><a href="../LoginPage/login.php">Login</a></li>
+
+                </ul>
+            </div>
+    
+            <div class="footer-col">
+                <h4 class="footer-title">Contato</h4>
+                <ul class="footer-contact">
+                    <li><a href="tel:+5583989101761"><i class="fas fa-phone"></i> +55 (83) 98910-1761</a></li>
+                    <li><a href="mailto:infomarealta@gmail.com"><i class="fas fa-envelope"></i> infomarealta@gmail.com</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-col">
+                <h4 class="footer-title">Redes Sociais</h4>
+                <ul class="footer-socials">
+                    <li>
+                        <a href="https://instagram.com" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://facebook.com" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Maré Alta Resort. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body> 
+</html>
